@@ -88,7 +88,7 @@ photo_japanese_users = [
 ]
 
 photo_japanese_users.each do |user|
-  # file = URI.open("https://source.unsplash.com/featured?profile&#{user[0]}##{rand(1..1000)}")
+  #file = URI.open("https://source.unsplash.com/featured?profile&#{user[0]}##{rand(1..1000)}")
   User.create!(
     first_name: user[0],
     last_name: user[1],
@@ -123,14 +123,14 @@ no_photo_japanese_users = [
 ]
 
 no_photo_japanese_users.each do |user|
-  file = URI.open("https://ui-avatars.com/api/?background=random&name=#{user[0]}+#{user[1]}")
+  # file = URI.open("https://ui-avatars.com/api/?background=random&name=#{user[0]}+#{user[1]}")
   User.create!(
     first_name: user[0],
     last_name: user[1],
     email: "#{user[0]}_#{user[1]}@healthway.live",
     password: 123123,
     company: company
-  ).photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  )#.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
   puts "#{User.count} users created..."
 end
 

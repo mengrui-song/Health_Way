@@ -40,7 +40,9 @@
         <div class="card-index">
           <% @no_appointment_emps.each do |no_appointment_emp| %>
             <div class="card-trip">
-              <%= cl_image_tag no_appointment_emp.photo.key, class: 'avatar' %>
+              <% if no_appointment_emp.photo.key %>
+                <%= cl_image_tag no_appointment_emp.photo.key, class: 'avatar' %>
+              <% end %>
               <%= no_appointment_emp.first_name.capitalize %>
               <% if @set_up.company.users.where(first_name: no_appointment_emp.first_name).count > 1 %>
                 <%= no_appointment_emp.last_name.first.capitalize %>.
@@ -56,7 +58,9 @@
         <div class="card-index card-index-pending">
           <% @no_result_checks.each do |no_result_check| %>
             <div class="card-trip">
-              <%= cl_image_tag no_result_check.user.photo.key, class: 'avatar' %>
+              <% if no_result_check.user.photo.key %>
+                <%= cl_image_tag no_result_check.user.photo.key, class: 'avatar' %>
+              <% end %>
               <%= no_result_check.user.first_name.capitalize %><br>
               <%= no_result_check.date.strftime('%b %d') %>
             </div>
