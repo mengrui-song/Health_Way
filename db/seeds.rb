@@ -88,14 +88,14 @@ photo_japanese_users = [
 ]
 
 photo_japanese_users.each do |user|
-  file = URI.open("https://source.unsplash.com/featured?profile&#{user[0]}##{rand(1..1000)}")
+  # file = URI.open("https://source.unsplash.com/featured?profile&#{user[0]}##{rand(1..1000)}")
   User.create!(
     first_name: user[0],
     last_name: user[1],
     email: "#{user[0]}_#{user[1]}@healthway.live",
     password: 123123,
     company: company
-  ).photo.attach(io: file, filename: 'user.png', content_type: 'image/jpg')
+  )#.photo.attach(io: file, filename: 'user.png', content_type: 'image/jpg')
   puts "#{User.count} users created..."
 end
 
@@ -148,14 +148,14 @@ end
 puts "Created #{english_users.count} English users"
 
 english_users.each do |user|
-  file = URI.open("https://source.unsplash.com/featured?profile&#{user[:first_name]}##{rand(1..1000)}")
+  # file = URI.open("https://source.unsplash.com/featured?profile&#{user[:first_name]}##{rand(1..1000)}")
   User.create!(
     first_name: user[:first_name],
     last_name: user[:last_name],
     email: "#{user[:first_name]}_#{user[:last_name]}@healthway.live",
     password: 123123,
     company: company
-  ).photo.attach(io: file, filename: 'user.png', content_type: 'image/jpg')
+  )#.photo.attach(io: file, filename: 'user.png', content_type: 'image/jpg')
   puts "#{User.count} users created..."
 end
 
