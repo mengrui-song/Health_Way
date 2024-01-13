@@ -1,7 +1,5 @@
 # 🌱 HealthWay
 
-Project description goes here
-
 _An app helps HR to track employee's health check status and digitalizes employee's health check results._
 <br>
 App home: https://healthway.live
